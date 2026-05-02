@@ -20,32 +20,30 @@ export default function Agendamiento() {
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
             <span className="text-green-400 font-bold text-3xl">01</span>
             <h3 className="text-lg font-bold mt-3 mb-3">Contacta al Dr. Pozo</h3>
-            <p className="text-white/70 text-sm leading-relaxed text-balance">
-              Contáctanos por WhatsApp o al teléfono{" "}
-              <a href={`tel:${CLINICA.telefono}`} className="whitespace-nowrap underline underline-offset-2">
-                {CLINICA.telefonoDisplay}
-              </a>{" "}
-              para consultar disponibilidad de horarios.
-            </p>
+            <div className="text-white/70 text-sm leading-relaxed space-y-2">
+              <p>Contáctanos por WhatsApp o llama al{" "}
+                <a href={`tel:${CLINICA.telefono}`} className="whitespace-nowrap underline underline-offset-2">{CLINICA.telefonoDisplay}</a>.
+              </p>
+              <p>Te orientaremos sobre disponibilidad de horarios.</p>
+            </div>
           </div>
 
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
             <span className="text-green-400 font-bold text-3xl">02</span>
             <h3 className="text-lg font-bold mt-3 mb-3">Confirma con depósito</h3>
-            <p className="text-white/70 text-sm leading-relaxed text-balance">
-              El doctor te indicará los pasos para realizar un depósito previo
-              que asegura tu hora. Este monto se descuenta del total de la consulta.
-            </p>
+            <div className="text-white/70 text-sm leading-relaxed space-y-2">
+              <p>El doctor te indicará los pasos para realizar un depósito previo que asegura tu hora.</p>
+              <p>Este monto se descuenta del total de la consulta.</p>
+            </div>
           </div>
 
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
             <span className="text-green-400 font-bold text-3xl">03</span>
             <h3 className="text-lg font-bold mt-3 mb-3">Asiste a tu consulta</h3>
-            <p className="text-white/70 text-sm leading-relaxed text-balance">
-              Llega a nuestra clínica en {CLINICA.direccion}.
-              El saldo restante se cancela en el momento
-              de la atención, en efectivo o por transferencia.
-            </p>
+            <div className="text-white/70 text-sm leading-relaxed space-y-2">
+              <p>Llega a nuestra clínica en <span className="whitespace-nowrap">{CLINICA.direccion}</span>.</p>
+              <p>El saldo restante se cancela en el momento de la atención, en efectivo o por transferencia.</p>
+            </div>
           </div>
         </div>
 
