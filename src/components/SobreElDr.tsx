@@ -10,7 +10,7 @@ const credenciales = [
 export default function SobreElDr() {
   return (
     <section id="doctor" className="bg-white py-24">
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-20 items-start">
+      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[1fr_320px] gap-20 items-start">
 
         {/* Columna izquierda — Statement */}
         <div>
