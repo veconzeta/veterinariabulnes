@@ -1,17 +1,17 @@
 import { SERVICIOS } from "@/lib/constants";
 
 const iconos = [
-  // Estetoscopio
-  <svg key="s1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12c0 4.142-3.358 7.5-7.5 7.5S4.5 16.142 4.5 12m7.5 7.5V21m0 0h3m-3 0H9M3 5.5A2.5 2.5 0 0 1 5.5 3h.75A2.75 2.75 0 0 1 9 5.75v5A5.25 5.25 0 0 0 14.25 16h.75A2.75 2.75 0 0 0 17.75 13V8.25A2.75 2.75 0 0 1 20.5 5.5h0A2.5 2.5 0 0 1 23 8v1" />
+  // Corazón — consulta / cuidado veterinario
+  <svg key="s1" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
   </svg>,
-  // Animal / pata
-  <svg key="s2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.5c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2ZM8 6.5c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2ZM5 10.5c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2ZM15 10.5c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2ZM7.5 15.5c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5-2.015 3.5-4.5 3.5-4.5-1.015-4.5-3.5Z" />
+  // Estrella / destellos — animales especiales / exóticos
+  <svg key="s2" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+    <path fillRule="evenodd" d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036a2.63 2.63 0 0 0 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258a2.63 2.63 0 0 0-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.63 2.63 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.63 2.63 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395a1.5 1.5 0 0 0-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395a1.5 1.5 0 0 0 .948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z" clipRule="evenodd" />
   </svg>,
-  // Bisturí / cirugía
-  <svg key="s3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-7 h-7">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 3.75l9 9m0 0l-4.5 4.5m4.5-4.5H12m-4.5 9l-3-3m0 0l9-9M4.5 18.75l3-3" />
+  // Cruz médica — cirugía
+  <svg key="s3" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+    <path fillRule="evenodd" d="M11.25 3a.75.75 0 0 1 1.5 0v6.75H19.5a.75.75 0 0 1 0 1.5h-6.75V18a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V3Z" clipRule="evenodd" />
   </svg>,
 ];
 
