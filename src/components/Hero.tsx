@@ -4,22 +4,22 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="min-h-screen bg-navy-800 flex items-center pt-16"
+      className="min-h-screen paw-pattern flex items-center pt-16"
     >
       <div className="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
         {/* Texto */}
-        <div className="text-white">
-          <p className="text-green-400 font-semibold text-sm uppercase tracking-widest mb-4">
+        <div>
+          <p className="text-navy-600 font-semibold text-sm uppercase tracking-widest mb-4">
             Clínica Veterinaria · Santiago Centro
           </p>
           <h1 className="sr-only">Veterinaria Bulnes</h1>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-800 leading-tight mb-6">
             Tu clínica de <br />
-            <span className="text-green-400">confianza</span>
+            <span className="text-green-500">confianza</span>
           </h2>
-          <p className="text-white/80 text-lg mb-8 max-w-md leading-relaxed">
-            Atención veterinaria de confianza para tu mascota. Más de{" "}
-            <strong className="text-white">{CLINICA.experiencia} de experiencia</strong>{" "}
+          <p className="text-gray-500 text-lg mb-8 max-w-md leading-relaxed">
+            Atención veterinaria para tu mascota con más de{" "}
+            <strong className="text-navy-800">{CLINICA.experiencia} de experiencia</strong>{" "}
             respaldando cada diagnóstico.
           </p>
 
@@ -27,21 +27,27 @@ export default function Hero() {
             <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-wsp text-base">
               <WhatsAppIcon /> Agendar por WhatsApp
             </a>
-            <a href="#servicios" className="btn-primary bg-white/10 hover:bg-white/20 text-base">
+            <a href="#servicios" className="btn-outline text-base">
               Ver servicios →
             </a>
           </div>
 
-          <div className="mt-10 flex flex-col gap-2 text-white/60 text-sm">
+          <div className="mt-10 flex flex-col gap-2 text-gray-400 text-sm">
             <span>📍 {CLINICA.direccion} · A pasos del {CLINICA.metro}</span>
             <span>📞 {CLINICA.telefonoDisplay}</span>
             <span>🕐 {CLINICA.horario}</span>
           </div>
         </div>
 
-        {/* Ilustración / decoración */}
+        {/* Logo en círculo con borde punteado */}
         <div className="hidden md:flex justify-center items-center">
-          <img src="/logo-white.svg" alt="Logo Veterinaria Bulnes" className="w-64 md:w-80 lg:w-96 h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+          <div className="relative w-80 h-80 rounded-full border-4 border-dashed border-navy-300 flex items-center justify-center bg-white shadow-xl">
+            <img
+              src="/logo.svg"
+              alt="Veterinaria Bulnes"
+              className="w-56 h-auto hover:scale-105 transition-transform duration-500"
+            />
+          </div>
         </div>
       </div>
     </section>
