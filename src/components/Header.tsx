@@ -6,72 +6,79 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-navy-800 shadow-md">
-      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo / nombre */}
-        <a href="#inicio" className="flex items-center gap-3">
-          <img src="/icon-white.svg" alt="Ícono Veterinaria Bulnes" className="h-8 md:h-10 w-auto" />
-          <span className="text-white font-bold text-xl tracking-tight flex items-center gap-1.5">
-            Veterinaria <span className="font-normal text-white/80">Bulnes</span>
+    <header className="fixed top-0 left-0 right-0 z-40">
+      {/* Barra superior con datos de contacto */}
+      <div className="hidden md:block bg-navy-900 border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-4 h-9 flex items-center justify-between">
+          <span className="text-white/50 text-xs tracking-wide">
+            {CLINICA.direccion} · {CLINICA.ciudad} · {CLINICA.metro}
           </span>
-        </a>
+          <a href={`tel:${CLINICA.telefono}`} className="text-white/70 hover:text-white text-xs tracking-wide transition-colors">
+            {CLINICA.telefonoDisplay}
+          </a>
+        </div>
+      </div>
 
-        {/* Nav desktop */}
-        <nav className="hidden md:flex items-center gap-6 text-sm text-white/80">
-          {NAV_LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-white transition-colors">
-              {l.label}
-            </a>
-          ))}
-        </nav>
+      {/* Barra principal */}
+      <div className="bg-navy-800 shadow-lg">
+        <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+          {/* Logo */}
+          <a href="#inicio" className="flex items-center gap-3">
+            <img src="/icon-white.svg" alt="Ícono Veterinaria Bulnes" className="h-7 w-auto opacity-90" />
+            <span className="text-white text-base tracking-tight">
+              <span className="font-light">Veterinaria </span>
+              <span className="font-bold">Bulnes</span>
+            </span>
+          </a>
 
-        {/* CTA WhatsApp desktop */}
-        <a
-          href={WA_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors"
-        >
-          <WhatsAppIcon /> Agendar
-        </a>
+          {/* Nav desktop */}
+          <nav className="hidden md:flex items-center gap-7 text-xs text-white/70 tracking-widest uppercase">
+            {NAV_LINKS.map((l) => (
+              <a key={l.href} href={l.href} className="hover:text-white transition-colors">
+                {l.label}
+              </a>
+            ))}
+          </nav>
 
-        {/* Hamburger mobile */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-white p-2"
-          aria-label="Abrir menú"
-        >
-          {open ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+          {/* CTA */}
+          <a
+            href={WA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-semibold px-4 py-2 tracking-wider uppercase transition-colors"
+          >
+            <WhatsAppIcon /> Agendar
+          </a>
+
+          {/* Hamburger mobile */}
+          <button onClick={() => setOpen(!open)} className="md:hidden text-white p-2" aria-label="Abrir menú">
+            {open ? (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Menú mobile */}
       {open && (
-        <div className="md:hidden bg-navy-900 px-4 pb-4">
+        <div className="md:hidden bg-navy-900 px-4 pb-4 border-t border-white/10">
           {NAV_LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block py-2 text-white/80 hover:text-white border-b border-white/10 text-sm"
+              className="block py-3 text-white/70 hover:text-white border-b border-white/10 text-xs tracking-widest uppercase"
             >
               {l.label}
             </a>
           ))}
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-3 btn-wsp text-sm w-full justify-center"
-          >
+          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="mt-4 btn-wsp text-xs w-full justify-center">
             <WhatsAppIcon /> Agendar por WhatsApp
           </a>
         </div>
@@ -82,7 +89,7 @@ export default function Header() {
 
 function WhatsAppIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
       <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.551 4.103 1.513 5.831L.057 23.215a.75.75 0 0 0 .92.92l5.403-1.46A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.98-1.367l-.356-.214-3.696.998.986-3.595-.233-.37A9.712 9.712 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z" />
     </svg>

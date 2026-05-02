@@ -1,54 +1,60 @@
 import { CLINICA } from "@/lib/constants";
 
-const stats = [
-  { valor: "50+", etiqueta: "Años de experiencia" },
-  { valor: "U. de Chile", etiqueta: "Casa de estudios" },
-  { valor: "Gatos & Perros", etiqueta: "Especialización principal" },
-  { valor: "Individual", etiqueta: "Atención personalizada" },
+const credenciales = [
+  { label: "Casa de estudios", valor: "Universidad de Chile" },
+  { label: "Especialización", valor: "Perros, Gatos y Animales Exóticos" },
+  { label: "Modalidad", valor: "Atención individual y personalizada" },
+  { label: "Ubicación", valor: `${CLINICA.direccion}, Santiago` },
 ];
 
 export default function SobreElDr() {
   return (
-    <section id="doctor" className="paw-pattern py-20">
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-        {/* Círculo decorativo con borde punteado */}
-        <div className="flex justify-center">
-          <div className="relative w-72 h-72 rounded-full border-4 border-dashed border-navy-300 bg-white flex items-center justify-center shadow-xl">
-            <span className="text-[100px]">🩺</span>
-            <div className="absolute -bottom-4 -right-4 bg-navy-800 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-              {CLINICA.experiencia} de experiencia
-            </div>
-          </div>
+    <section id="doctor" className="bg-white py-24">
+      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-20 items-start">
+
+        {/* Columna izquierda — Statement */}
+        <div>
+          <span className="section-label">Sobre el profesional</span>
+          <div className="section-divider" />
+          <h2 className="text-3xl md:text-4xl font-bold text-navy-900 leading-snug mb-8">
+            Más de medio siglo<br />dedicado a la salud<br />de tu mascota.
+          </h2>
+          <p className="text-gray-500 leading-relaxed mb-6">
+            {CLINICA.doctor} es Médico Veterinario titulado de la{" "}
+            <strong className="text-navy-800">{CLINICA.universidad}</strong>, con más
+            de {CLINICA.experiencia} de ejercicio profesional ininterrumpido en Santiago.
+          </p>
+          <p className="text-gray-500 leading-relaxed">
+            Atiende de forma individual cada caso, sin intermediarios, brindando
+            a cada paciente la atención directa de un profesional con décadas
+            de experiencia clínica acumulada.
+          </p>
         </div>
 
-        {/* Texto */}
-        <div>
-          <p className="text-navy-600 font-semibold text-sm uppercase tracking-widest mb-2">
-            Sobre el profesional
+        {/* Columna derecha — Credenciales */}
+        <div className="border-t-2 border-navy-800 pt-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-navy-500 mb-8">
+            Credenciales
           </p>
-          <h2 className="section-title">{CLINICA.doctor}</h2>
-          <p className="text-gray-500 leading-relaxed mb-6">
-            Médico Veterinario titulado de la <strong className="text-navy-800">{CLINICA.universidad}</strong>,
-            con más de {CLINICA.experiencia} dedicado a la salud animal.
-            Su clínica, ubicada en el corazón de Santiago, se ha convertido en
-            un referente de confianza para familias que buscan atención
-            veterinaria cercana, honesta y de calidad.
-          </p>
-          <p className="text-gray-500 leading-relaxed mb-10">
-            Trabaja de forma individual para ofrecer una atención personalizada
-            en cada consulta, asegurando que tanto el paciente como su familia
-            reciban toda la atención y cuidado que merecen.
-          </p>
-
-          <div className="grid grid-cols-2 gap-4">
-            {stats.map((s) => (
-              <div key={s.etiqueta} className="bg-navy-800 rounded-xl p-4 text-white">
-                <p className="text-xl font-bold">{s.valor}</p>
-                <p className="text-sm text-white/70 mt-1">{s.etiqueta}</p>
+          <div className="space-y-0">
+            {credenciales.map((c, i) => (
+              <div
+                key={c.label}
+                className={`py-5 ${i < credenciales.length - 1 ? "border-b border-gray-100" : ""}`}
+              >
+                <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">{c.label}</p>
+                <p className="text-navy-900 font-semibold">{c.valor}</p>
               </div>
             ))}
           </div>
+
+          {/* Stat destacada */}
+          <div className="mt-8 bg-navy-800 text-white p-6 flex items-end gap-4">
+            <p className="text-5xl font-bold leading-none">50+</p>
+            <p className="text-white/60 text-sm leading-tight">años de<br />experiencia</p>
+          </div>
         </div>
+
       </div>
     </section>
   );

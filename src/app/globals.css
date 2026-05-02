@@ -6,35 +6,37 @@
   html {
     scroll-behavior: smooth;
   }
-
   body {
-    @apply text-navy-800 bg-white;
+    @apply text-navy-900 bg-white;
   }
 }
 
 @layer components {
   .btn-wsp {
-    @apply inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-5 py-3 rounded-full transition-colors duration-200 shadow-md;
-  }
-
-  .btn-primary {
-    @apply inline-flex items-center gap-2 bg-navy-800 hover:bg-navy-700 text-white font-semibold px-5 py-3 rounded-full transition-colors duration-200;
+    @apply inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-sm transition-colors duration-200 shadow-sm tracking-wide;
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 border-2 border-navy-800 text-navy-800 hover:bg-navy-800 hover:text-white font-semibold px-5 py-3 rounded-full transition-colors duration-200;
+    @apply inline-flex items-center gap-2 border border-navy-800 text-navy-800 hover:bg-navy-800 hover:text-white font-semibold px-6 py-3 rounded-sm transition-colors duration-200 tracking-wide;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-navy-800 hover:bg-navy-700 text-white font-semibold px-6 py-3 rounded-sm transition-colors duration-200;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-navy-500 mb-3 block;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-navy-800 mb-4;
+    @apply text-3xl md:text-4xl font-bold text-navy-900 mb-4 leading-tight;
+  }
+
+  .section-divider {
+    @apply w-12 h-0.5 bg-navy-800 mb-6;
   }
 
   .section-sub {
-    @apply text-lg text-gray-500 mb-10 max-w-2xl;
-  }
-
-  .paw-pattern {
-    background-color: #ffffff;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%231B2D4F' fill-opacity='0.04'%3E%3Cellipse cx='20' cy='16' rx='5' ry='6'/%3E%3Cellipse cx='33' cy='10' rx='5' ry='6'/%3E%3Cellipse cx='47' cy='10' rx='5' ry='6'/%3E%3Cellipse cx='60' cy='16' rx='5' ry='6'/%3E%3Cpath d='M40 22 C26 22 18 32 20 42 C22 50 30 58 40 58 C50 58 58 50 60 42 C62 32 54 22 40 22Z'/%3E%3C/g%3E%3C/svg%3E");
+    @apply text-base text-gray-500 mb-10 max-w-2xl leading-relaxed;
   }
 }
