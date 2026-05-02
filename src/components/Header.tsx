@@ -1,13 +1,32 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NAV_LINKS, WA_URL } from "@/lib/constants";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("inicio");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.25,
+        rootMargin: "-64px 0px -40% 0px",
+      }
+    );
+    sections.forEach((s) => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40">
-      {/* Barra principal */}
       <div className="bg-navy-800 shadow-lg">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           {/* Logo */}
@@ -20,12 +39,23 @@ export default function Header() {
           </a>
 
           {/* Nav desktop */}
-          <nav className="hidden md:flex items-center gap-7 text-xs text-white/70 tracking-widest uppercase">
-            {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} className="hover:text-white transition-colors">
-                {l.label}
-              </a>
-            ))}
+          <nav className="hidden md:flex items-center gap-1">
+            {NAV_LINKS.map((l) => {
+              const isActive = activeSection === l.href.slice(1);
+              return (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className={`px-3 py-1.5 text-xs tracking-widest uppercase transition-all duration-200 rounded-full ${
+                    isActive
+                      ? "bg-white/20 text-white"
+                      : "text-white/60 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  {l.label}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Hamburger mobile */}
@@ -46,16 +76,21 @@ export default function Header() {
       {/* Menú mobile */}
       {open && (
         <div className="md:hidden bg-navy-900 px-4 pb-4 border-t border-white/10">
-          {NAV_LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="block py-3 text-white/70 hover:text-white border-b border-white/10 text-xs tracking-widest uppercase"
-            >
-              {l.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((l) => {
+            const isActive = activeSection === l.href.slice(1);
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className={`block py-3 border-b border-white/10 text-xs tracking-widest uppercase transition-colors ${
+                  isActive ? "text-white font-semibold" : "text-white/70 hover:text-white"
+                }`}
+              >
+                {l.label}
+              </a>
+            );
+          })}
           <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="mt-4 btn-wsp text-xs w-full justify-center">
             <WhatsAppIcon /> Agendar por WhatsApp
           </a>
