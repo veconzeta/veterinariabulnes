@@ -1,23 +1,5 @@
 import { CLINICA, WA_URL } from "@/lib/constants";
 
-const pasos = [
-  {
-    num: "01",
-    titulo: "Contacta al Dr. Pozo",
-    desc: `Escríbenos por WhatsApp o llama al ${CLINICA.telefonoDisplay} para consultar disponibilidad de horarios.`,
-  },
-  {
-    num: "02",
-    titulo: "Confirma con depósito",
-    desc: "Para asegurar tu reserva, el doctor te indicará los pasos para realizar un depósito previo. Este monto se descuenta del valor total de la consulta.",
-  },
-  {
-    num: "03",
-    titulo: "Asiste a tu consulta",
-    desc: "Llega a nuestra clínica en Gral. Bulnes 28-A. El saldo restante se cancela al momento de la atención (transferencia o efectivo).",
-  },
-];
-
 export default function Agendamiento() {
   return (
     <section id="agendar" className="bg-navy-800 py-20 text-white">
@@ -28,20 +10,44 @@ export default function Agendamiento() {
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           ¿Cómo agendar?
         </h2>
-        <p className="text-white/70 text-lg mb-12 max-w-2xl">
+        <p className="text-white/70 text-lg mb-12">
           El agendamiento se realiza exclusivamente por teléfono o WhatsApp.
           Seguimos este proceso para garantizarte una atención de calidad.
         </p>
 
         {/* Pasos */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {pasos.map((p) => (
-            <div key={p.num} className="bg-white/5 border border-white/10 rounded-2xl p-6">
-              <span className="text-green-400 font-bold text-3xl">{p.num}</span>
-              <h3 className="text-lg font-bold mt-3 mb-2">{p.titulo}</h3>
-              <p className="text-white/70 text-sm leading-relaxed">{p.desc}</p>
-            </div>
-          ))}
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <span className="text-green-400 font-bold text-3xl">01</span>
+            <h3 className="text-lg font-bold mt-3 mb-2">Contacta al Dr. Pozo</h3>
+            <p className="text-white/70 text-sm leading-relaxed">
+              Escríbenos por WhatsApp o llama al{" "}
+              <a href={`tel:${CLINICA.telefono}`} className="whitespace-nowrap underline underline-offset-2">
+                {CLINICA.telefonoDisplay}
+              </a>{" "}
+              para consultar disponibilidad de horarios.
+            </p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <span className="text-green-400 font-bold text-3xl">02</span>
+            <h3 className="text-lg font-bold mt-3 mb-2">Confirma con depósito</h3>
+            <p className="text-white/70 text-sm leading-relaxed">
+              Para asegurar tu reserva, el doctor te indicará los pasos para realizar un depósito previo.
+              Este monto se descuenta del valor total de la consulta.
+            </p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+            <span className="text-green-400 font-bold text-3xl">03</span>
+            <h3 className="text-lg font-bold mt-3 mb-2">Asiste a tu consulta</h3>
+            <p className="text-white/70 text-sm leading-relaxed">
+              Llega a nuestra clínica en{" "}
+              <span className="whitespace-nowrap">{CLINICA.direccion}</span>.
+              El saldo restante se cancela al momento de la atención
+              (transferencia o efectivo).
+            </p>
+          </div>
         </div>
 
         {/* Política */}
@@ -49,9 +55,9 @@ export default function Agendamiento() {
           <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
             <span>📋</span> Política de reagendamiento
           </h3>
-          <ul className="text-white/70 text-sm leading-relaxed space-y-3">
+          <ul className="text-white/70 text-sm leading-relaxed space-y-4">
             <li className="flex gap-3">
-              <span className="text-green-400 shrink-0">✓</span>
+              <span className="text-green-400 shrink-0 mt-0.5">✓</span>
               <span>
                 Si necesitas cambiar tu hora, comunícate con al menos{" "}
                 <strong className="text-white">24 horas de anticipación</strong>.
@@ -59,19 +65,18 @@ export default function Agendamiento() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-amber-400 shrink-0">⚠</span>
+              <span className="text-amber-400 shrink-0 mt-0.5">⚠</span>
               <span>
-                En caso de <strong className="text-white">no presentarse o no avisar</strong>{" "}
-                dentro del plazo, el depósito no será reembolsado. Este sistema
-                nos permite asegurar la disponibilidad del Dr. Pozo para todos
-                nuestros pacientes.
+                En caso de <strong className="text-white">no presentarse o no avisar</strong> dentro del plazo,
+                el depósito no será reembolsado. Este sistema nos permite asegurar
+                la disponibilidad del Dr. Pozo para todos nuestros pacientes.
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="text-green-400 shrink-0">✓</span>
+              <span className="text-green-400 shrink-0 mt-0.5">✓</span>
               <span>
-                Agradecemos tu comprensión. Esto nos permite brindar una
-                atención de calidad y puntual a cada mascota.
+                Agradecemos tu comprensión. Esto nos permite brindar una atención
+                de calidad y puntual a cada mascota.
               </span>
             </li>
           </ul>
