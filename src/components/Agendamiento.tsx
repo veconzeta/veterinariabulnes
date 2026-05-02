@@ -25,7 +25,8 @@ export default function Agendamiento() {
               <a href={`tel:${CLINICA.telefono}`} className="whitespace-nowrap underline underline-offset-2">
                 {CLINICA.telefonoDisplay}
               </a>{" "}
-              para consultar disponibilidad de horarios.
+              para consultar disponibilidad 
+              de horarios.
             </p>
           </div>
 
@@ -33,7 +34,8 @@ export default function Agendamiento() {
             <span className="text-green-400 font-bold text-3xl">02</span>
             <h3 className="text-lg font-bold mt-3 mb-2">Confirma con depósito</h3>
             <p className="text-white/70 text-sm leading-relaxed">
-              Para asegurar tu reserva, el doctor te indicará los pasos para realizar un depósito previo.
+              Para asegurar tu reserva, el doctor te indicará 
+              los pasos para realizar un depósito previo.
               Este monto se descuenta del valor total de la consulta.
             </p>
           </div>
@@ -44,6 +46,7 @@ export default function Agendamiento() {
             <p className="text-white/70 text-sm leading-relaxed">
               Llega a nuestra clínica en{" "}
               <span className="whitespace-nowrap">{CLINICA.direccion}</span>.
+              
               El saldo restante se cancela al momento de la atención
               (transferencia o efectivo).
             </p>
