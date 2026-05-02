@@ -40,8 +40,8 @@ export default function Hero() {
 
         {/* Ilustración / decoración */}
         <div className="hidden md:flex justify-center">
-          <div className="w-72 h-72 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-            <span className="text-[120px] select-none">🐾</span>
+          <div className="w-72 h-72 rounded-full bg-white/5 border border-white/10 flex items-center justify-center p-8 hover:scale-105 transition-transform duration-500">
+            <img src="/logo-white.svg" alt="Logo Veterinaria Bulnes" className="w-full h-auto drop-shadow-xl" />
           </div>
         </div>
       </div>

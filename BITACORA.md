@@ -70,7 +70,7 @@
 ### Lo que se hizo
 - Recepción de paquete gráfico (logos en SVG, iconos en PNG para Web y Apple, imagen OpenGraph).
 - Migración de archivos gráficos a directorios correspondientes (`public/` para SVGs estáticos, `src/app/` para metadatos automatizados de Next.js).
-- Integración de `logo-white.svg` en `Header.tsx` y `Footer.tsx` en reemplazo del logo de texto anterior. *(hecho por gemini)*
+- Integración de `logo-white.svg` en `Header.tsx`, `Footer.tsx` y `Hero.tsx` (reemplazando emojis de huellas). *(hecho por gemini)*
 
 ### Pendientes
 1. Actualizar `src/lib/constants.ts` con datos confirmados por el cliente (horario, depósito, banco).
