@@ -55,7 +55,8 @@ export default function Hero() {
               <p className="text-white/50 text-xs mt-1">Teléfono y WhatsApp</p>
             </div>
             <div>
-              <p className="text-sm font-semibold tracking-wide leading-relaxed">{CLINICA.horario}</p>
+              <p className="text-sm font-semibold tracking-wide">Lunes a Sábado · 15:00 – 20:00</p>
+              <p className="text-sm font-semibold tracking-wide mt-0.5">Solo con agendamiento previo</p>
               <p className="text-white/50 text-xs mt-1">Horario de atención</p>
             </div>
           </div>
