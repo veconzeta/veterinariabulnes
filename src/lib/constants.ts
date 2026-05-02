@@ -23,6 +23,7 @@ export const WA_MESSAGE = encodeURIComponent(
 export const WA_URL = `https://wa.me/${CLINICA.telefono.replace(/\D/g, "")}?text=${WA_MESSAGE}`;
 
 export const NAV_LINKS = [
+  { href: "#inicio", label: "Inicio" },
   { href: "#servicios", label: "Servicios" },
   { href: "#doctor", label: "El Dr. Pozo" },
   { href: "#agendar", label: "Agendar" },

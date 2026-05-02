@@ -10,14 +10,11 @@ export default function Hero() {
           <span className="section-label">Médico Veterinario · Santiago, Chile</span>
           <div className="section-divider" />
 
-          <h1 className="sr-only">Veterinaria Bulnes — Dr. Guillermo Pozo Ruiz</h1>
-          <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-navy-900 leading-tight mb-6">
-            50 años al servicio<br />
-            de la salud animal.
-          </h2>
-
-          <p className="text-gray-500 text-base leading-relaxed mb-2 max-w-md">
+          <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-navy-900 leading-tight mb-3">
             {CLINICA.doctor}
+          </h1>
+          <p className="text-lg text-gray-500 font-light mb-8 max-w-md leading-relaxed">
+            50 años al servicio de la salud animal.
           </p>
           <p className="text-gray-400 text-sm mb-10 max-w-md">
             Médico Veterinario titulado de la {CLINICA.universidad} · {CLINICA.direccion}, Santiago

@@ -1,33 +1,21 @@
 "use client";
 import { useState } from "react";
-import { CLINICA, NAV_LINKS, WA_URL } from "@/lib/constants";
+import { NAV_LINKS, WA_URL } from "@/lib/constants";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40">
-      {/* Barra superior con datos de contacto */}
-      <div className="hidden md:block bg-navy-900 border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-4 h-9 flex items-center justify-between">
-          <span className="text-white/50 text-xs tracking-wide">
-            {CLINICA.direccion} · {CLINICA.ciudad} · {CLINICA.metro}
-          </span>
-          <a href={`tel:${CLINICA.telefono}`} className="text-white/70 hover:text-white text-xs tracking-wide transition-colors">
-            {CLINICA.telefonoDisplay}
-          </a>
-        </div>
-      </div>
-
       {/* Barra principal */}
       <div className="bg-navy-800 shadow-lg">
-        <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           {/* Logo */}
           <a href="#inicio">
             <img
               src="/logo-horizontal-white.svg"
               alt="Veterinaria Bulnes"
-              className="h-9 w-auto opacity-90 hover:opacity-100 transition-opacity"
+              className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
             />
           </a>
 
@@ -39,16 +27,6 @@ export default function Header() {
               </a>
             ))}
           </nav>
-
-          {/* CTA */}
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-semibold px-4 py-2 tracking-wider uppercase transition-colors"
-          >
-            <WhatsAppIcon /> Agendar
-          </a>
 
           {/* Hamburger mobile */}
           <button onClick={() => setOpen(!open)} className="md:hidden text-white p-2" aria-label="Abrir menú">
