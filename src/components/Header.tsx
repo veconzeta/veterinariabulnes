@@ -25,9 +25,9 @@ export default function Header() {
           {/* Logo */}
           <a href="#inicio">
             <img
-              src="/logo-horizontal.svg"
+              src="/logo-horizontal-white.svg"
               alt="Veterinaria Bulnes"
-              className="h-9 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+              className="h-9 w-auto opacity-90 hover:opacity-100 transition-opacity"
             />
           </a>
 
