@@ -9,7 +9,7 @@ const pasos = [
   {
     num: "02",
     titulo: "Confirma con depósito",
-    desc: `Para reservar tu hora, se requiere un depósito previo de ${CLINICA.deposito} mediante transferencia bancaria. Este monto se descuenta del valor total de la consulta.`,
+    desc: "Para asegurar tu reserva, el doctor te indicará los pasos para realizar un depósito previo. Este monto se descuenta del valor total de la consulta.",
   },
   {
     num: "03",
