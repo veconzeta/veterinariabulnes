@@ -9,8 +9,11 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-40 bg-navy-800 shadow-md">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo / nombre */}
-        <a href="#inicio" className="flex items-center">
-          <img src="/logo-white.svg" alt={CLINICA.nombre} className="h-12 md:h-14 w-auto" />
+        <a href="#inicio" className="flex items-center gap-3">
+          <img src="/icon-white.svg" alt="Ícono Veterinaria Bulnes" className="h-8 md:h-10 w-auto" />
+          <span className="text-white font-bold text-xl tracking-tight flex items-center gap-1.5">
+            Veterinaria <span className="font-normal text-white/80">Bulnes</span>
+          </span>
         </a>
 
         {/* Nav desktop */}

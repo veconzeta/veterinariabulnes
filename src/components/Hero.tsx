@@ -12,10 +12,11 @@ export default function Hero() {
           <p className="text-green-400 font-semibold text-sm uppercase tracking-widest mb-4">
             Clínica Veterinaria · Santiago Centro
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Veterinaria <br />
-            <span className="text-green-400">Bulnes</span>
-          </h1>
+          <h1 className="sr-only">Veterinaria Bulnes</h1>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            Tu clínica de <br />
+            <span className="text-green-400">confianza</span>
+          </h2>
           <p className="text-white/80 text-lg mb-8 max-w-md leading-relaxed">
             Atención veterinaria de confianza para tu mascota. Más de{" "}
             <strong className="text-white">{CLINICA.experiencia} de experiencia</strong>{" "}
