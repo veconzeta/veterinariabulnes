@@ -23,12 +23,12 @@ export default function Header() {
       <div className="bg-navy-800 shadow-lg">
         <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-3">
-            <img src="/icon-white.svg" alt="Ícono Veterinaria Bulnes" className="h-7 w-auto opacity-90" />
-            <span className="text-white text-base tracking-tight">
-              <span className="font-light">Veterinaria </span>
-              <span className="font-bold">Bulnes</span>
-            </span>
+          <a href="#inicio">
+            <img
+              src="/logo-horizontal.svg"
+              alt="Veterinaria Bulnes"
+              className="h-9 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+            />
           </a>
 
           {/* Nav desktop */}
