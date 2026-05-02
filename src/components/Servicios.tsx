@@ -20,9 +20,16 @@ const iconos = [
     <path d="M14.25 9.5 L18 7.5M14.25 13 L18.5 15" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
   </svg>,
 
-  // Bisturí — cirugía menor
+  // Vendaje/curita — cirugía menor
   <svg key="s3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-8 h-8">
-    <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+    <g transform="rotate(45, 12, 12)">
+      <rect x="2" y="8" width="20" height="8" rx="4" />
+      <rect x="9" y="9.5" width="6" height="5" strokeWidth={1} />
+      <line x1="2.5" y1="11" x2="9" y2="11" />
+      <line x1="2.5" y1="13" x2="9" y2="13" />
+      <line x1="15" y1="11" x2="21.5" y2="11" />
+      <line x1="15" y1="13" x2="21.5" y2="13" />
+    </g>
   </svg>,
 ];
 
