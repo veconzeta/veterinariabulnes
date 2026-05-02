@@ -10,7 +10,7 @@ export default function Agendamiento() {
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           ¿Cómo agendar?
         </h2>
-        <p className="text-white/70 text-lg mb-12">
+        <p className="text-white/70 text-lg mb-12 text-balance">
           El agendamiento se realiza exclusivamente por teléfono o WhatsApp.
           Seguimos este proceso para garantizarte una atención de calidad.
         </p>
@@ -19,36 +19,32 @@ export default function Agendamiento() {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
             <span className="text-green-400 font-bold text-3xl">01</span>
-            <h3 className="text-lg font-bold mt-3 mb-2">Contacta al Dr. Pozo</h3>
-            <p className="text-white/70 text-sm leading-relaxed">
-              Escríbenos por WhatsApp o llama al{" "}
+            <h3 className="text-lg font-bold mt-3 mb-3">Contacta al Dr. Pozo</h3>
+            <p className="text-white/70 text-sm leading-relaxed text-balance">
+              Contáctanos por WhatsApp o al teléfono{" "}
               <a href={`tel:${CLINICA.telefono}`} className="whitespace-nowrap underline underline-offset-2">
                 {CLINICA.telefonoDisplay}
               </a>{" "}
-              para consultar disponibilidad 
-              de horarios.
+              para consultar disponibilidad de horarios.
             </p>
           </div>
 
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
             <span className="text-green-400 font-bold text-3xl">02</span>
-            <h3 className="text-lg font-bold mt-3 mb-2">Confirma con depósito</h3>
-            <p className="text-white/70 text-sm leading-relaxed">
-              Para asegurar tu reserva, el doctor te indicará 
-              los pasos para realizar un depósito previo.
-              Este monto se descuenta del valor total de la consulta.
+            <h3 className="text-lg font-bold mt-3 mb-3">Confirma con depósito</h3>
+            <p className="text-white/70 text-sm leading-relaxed text-balance">
+              El doctor te indicará los pasos para realizar un depósito previo
+              que asegura tu hora. Este monto se descuenta del total de la consulta.
             </p>
           </div>
 
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
             <span className="text-green-400 font-bold text-3xl">03</span>
-            <h3 className="text-lg font-bold mt-3 mb-2">Asiste a tu consulta</h3>
-            <p className="text-white/70 text-sm leading-relaxed">
-              Llega a nuestra clínica en{" "}
-              <span className="whitespace-nowrap">{CLINICA.direccion}</span>.
-              
-              El saldo restante se cancela al momento de la atención
-              (transferencia o efectivo).
+            <h3 className="text-lg font-bold mt-3 mb-3">Asiste a tu consulta</h3>
+            <p className="text-white/70 text-sm leading-relaxed text-balance">
+              Llega a nuestra clínica en {CLINICA.direccion}.
+              El saldo restante se cancela en el momento
+              de la atención, en efectivo o por transferencia.
             </p>
           </div>
         </div>
@@ -61,25 +57,25 @@ export default function Agendamiento() {
           <ul className="text-white/70 text-sm leading-relaxed space-y-4">
             <li className="flex gap-3">
               <span className="text-green-400 shrink-0 mt-0.5">✓</span>
-              <span>
-                Si necesitas cambiar tu hora, comunícate con al menos{" "}
+              <span className="text-balance">
+                Si necesitas cambiar tu hora, avísanos con al menos{" "}
                 <strong className="text-white">24 horas de anticipación</strong>.
                 Solo se permite un reagendamiento por reserva.
               </span>
             </li>
             <li className="flex gap-3">
               <span className="text-amber-400 shrink-0 mt-0.5">⚠</span>
-              <span>
-                En caso de <strong className="text-white">no presentarse o no avisar</strong> dentro del plazo,
-                el depósito no será reembolsado. Este sistema nos permite asegurar
-                la disponibilidad del Dr. Pozo para todos nuestros pacientes.
+              <span className="text-balance">
+                En caso de <strong className="text-white">no presentarse o no avisar</strong>,
+                el depósito no será reembolsado, ya que garantiza el bloque
+                de tiempo reservado para tu mascota.
               </span>
             </li>
             <li className="flex gap-3">
               <span className="text-green-400 shrink-0 mt-0.5">✓</span>
-              <span>
-                Agradecemos tu comprensión. Esto nos permite brindar una atención
-                de calidad y puntual a cada mascota.
+              <span className="text-balance">
+                Agradecemos tu comprensión. Este sistema nos permite brindar
+                una atención puntual y de calidad a cada paciente.
               </span>
             </li>
           </ul>
