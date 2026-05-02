@@ -17,7 +17,7 @@ export default function SobreElDr() {
           <span className="section-label">Sobre el profesional</span>
           <div className="section-divider" />
           <h2 className="text-3xl md:text-4xl font-bold text-navy-900 leading-snug mb-8">
-            Más de medio siglo<br />dedicado a la salud<br />de tu mascota.
+            Más de medio siglo<br />dedicado a la salud de tu mascota.
           </h2>
           <p className="text-gray-500 leading-relaxed mb-6">
             {CLINICA.doctor} es Médico Veterinario titulado de la{" "}
