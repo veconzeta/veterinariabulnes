@@ -39,10 +39,8 @@ export default function Hero() {
         </div>
 
         {/* Ilustración / decoración */}
-        <div className="hidden md:flex justify-center">
-          <div className="w-72 h-72 rounded-full bg-white/5 border border-white/10 flex items-center justify-center p-8 hover:scale-105 transition-transform duration-500">
-            <img src="/logo-white.svg" alt="Logo Veterinaria Bulnes" className="w-full h-auto drop-shadow-xl" />
-          </div>
+        <div className="hidden md:flex justify-center items-center">
+          <img src="/logo-white.svg" alt="Logo Veterinaria Bulnes" className="w-64 md:w-80 lg:w-96 h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
         </div>
       </div>
     </section>

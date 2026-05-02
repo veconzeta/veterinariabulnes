@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Marca */}
           <div>
-            <img src="/logo-white.svg" alt={CLINICA.nombre} className="h-12 w-auto mb-4" />
+            <img src="/logo-white.svg" alt={CLINICA.nombre} className="h-20 w-auto mb-6" />
             <p className="text-sm">{CLINICA.doctor}</p>
             <p className="text-sm mt-1">{CLINICA.direccion} · {CLINICA.ciudad}</p>
           </div>
