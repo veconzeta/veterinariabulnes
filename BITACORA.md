@@ -68,12 +68,25 @@
 ## Sesión 2 — 2026-05-02
 
 ### Lo que se hizo
-- Recepción de paquete gráfico (logos en SVG, iconos en PNG para Web y Apple, imagen OpenGraph).
-- Migración de archivos gráficos a directorios correspondientes (`public/` para SVGs estáticos, `src/app/` para metadatos automatizados de Next.js).
-- Integración de `logo-white.svg` en `Header.tsx`, `Footer.tsx` y `Hero.tsx` (reemplazando emojis de huellas). *(hecho por gemini)*
+
+**1. Actualización de Textos y Políticas**
+- Se eliminó el monto específico del depósito ($10.000) y la mención a bancos en `src/lib/constants.ts` y en `src/components/Agendamiento.tsx`. Ahora se indica que el proceso será gestionado internamente por el doctor.
+
+**2. Ubicación de Archivos y Assets Gráficos**
+- `public/logo.svg` y `public/logo-white.svg`: Logos principales (con texto). Se ubican en `public/` para uso general como imágenes `<img>`.
+- `public/icon-white.svg`: Isotipo aislado (solo la "B"). Lo generé a partir del logo principal editando el `viewBox` del SVG para poder usarlo en espacios horizontales pequeños.
+- `src/app/icon.png` y `src/app/apple-icon.png`: Íconos de navegador web y atajo de Apple. Se ubican dentro de `src/app/` porque Next.js los compila automáticamente como metadata estandarizada.
+- `src/app/opengraph-image.jpg`: Imagen miniatura para redes sociales (WhatsApp, Facebook). También se auto-procesa por Next.js.
+
+**3. Cirugía de Diseño UX/UI**
+- **Header (`src/components/Header.tsx`):** Se reemplazó el logo vertical cuadrado (que era ilegible al reducirse a 48px) por el isotipo `icon-white.svg` limpio, acompañado del nombre estructurado en texto HTML a su lado. Esto crea un diseño horizontal óptimo.
+- **Hero (`src/components/Hero.tsx`):** Se eliminó el círculo contenedor para el logo. El `logo-white.svg` gigante ahora flota en la derecha (con animación de hover). Para evitar redundancia de lectura, el texto a la izquierda ya no repite "Veterinaria Bulnes", sino que se cambió por un eslogan ("Tu clínica de confianza"). El nombre real se ocultó visualmente para el SEO en un `<h1 className="sr-only">`.
+- **Footer (`src/components/Footer.tsx`):** Integración de `logo-white.svg` a mayor escala.
+
+*(hecho por gemini)*
 
 ### Pendientes
-1. Actualizar `src/lib/constants.ts` con datos confirmados por el cliente (horario, depósito, banco).
+1. Confirmar y actualizar horario final en `src/lib/constants.ts` (Google dice hasta las 21:00, el código dice 19:00).
 2. Conectar dominio `veterinariabulnes.cl` en Cloudflare Pages.
 3. Hacer el repositorio privado en GitHub.
 
