@@ -2,10 +2,10 @@ import { CLINICA, WA_URL } from "@/lib/constants";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="min-h-screen bg-white flex items-center pt-24">
-      <div className="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-16 items-center">
+    <section id="inicio" className="min-h-screen bg-white flex items-center pt-16">
+      <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 gap-12 md:gap-16 items-center w-full">
 
-        {/* Columna izquierda — Autoridad primero */}
+        {/* Columna izquierda */}
         <div>
           <span className="section-label">Médico Veterinario · Santiago, Chile</span>
           <div className="section-divider" />
@@ -13,11 +13,12 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-navy-900 leading-tight mb-3">
             {CLINICA.doctor}
           </h1>
-          <p className="text-lg text-gray-500 font-light mb-8 max-w-md leading-relaxed">
+          <p className="text-lg text-gray-500 font-light mb-6 leading-relaxed">
             50 años al servicio de la salud animal.
           </p>
-          <p className="text-gray-400 text-sm mb-10 max-w-md">
-            Médico Veterinario titulado de la {CLINICA.universidad} · {CLINICA.direccion}, Santiago
+          <p className="text-gray-400 text-sm mb-10 leading-relaxed">
+            Médico Veterinario titulado de la {CLINICA.universidad}<br />
+            {CLINICA.direccion}, Santiago · {CLINICA.metro}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
@@ -29,30 +30,33 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-gray-100 flex gap-8 text-sm text-gray-400">
-            <span>{CLINICA.horario}</span>
-            <span>{CLINICA.metro}</span>
+          <div className="mt-10 pt-8 border-t border-gray-100">
+            <p className="text-sm text-gray-400 leading-relaxed">{CLINICA.horario}</p>
           </div>
         </div>
 
-        {/* Columna derecha — Tarjeta de credenciales */}
+        {/* Columna derecha — Tarjeta credenciales (desktop) */}
         <div className="hidden md:flex justify-end">
           <div className="bg-navy-800 text-white p-10 w-80">
             <div className="border-b border-white/20 pb-8 mb-8">
               <p className="text-6xl font-bold leading-none">50+</p>
               <p className="text-white/60 text-sm tracking-widest uppercase mt-2">Años de experiencia</p>
             </div>
-            <div className="border-b border-white/20 pb-8 mb-8">
-              <p className="text-sm font-semibold tracking-wide">Universidad de Chile</p>
+            <div className="border-b border-white/20 pb-6 mb-6">
+              <p className="text-sm font-semibold tracking-wide">{CLINICA.universidad}</p>
               <p className="text-white/50 text-xs mt-1">Médico Veterinario Titulado</p>
             </div>
-            <div className="border-b border-white/20 pb-8 mb-8">
+            <div className="border-b border-white/20 pb-6 mb-6">
               <p className="text-sm font-semibold tracking-wide">{CLINICA.direccion}</p>
               <p className="text-white/50 text-xs mt-1">{CLINICA.ciudad}</p>
             </div>
-            <div>
+            <div className="border-b border-white/20 pb-6 mb-6">
               <p className="text-sm font-semibold tracking-wide">{CLINICA.telefonoDisplay}</p>
               <p className="text-white/50 text-xs mt-1">Teléfono y WhatsApp</p>
+            </div>
+            <div>
+              <p className="text-sm font-semibold tracking-wide leading-relaxed">{CLINICA.horario}</p>
+              <p className="text-white/50 text-xs mt-1">Horario de atención</p>
             </div>
           </div>
         </div>
