@@ -22,7 +22,7 @@ export default function Servicios() {
         <span className="section-label">Lo que ofrecemos</span>
         <div className="section-divider" />
         <h2 className="section-title max-w-lg">Servicios de atención veterinaria</h2>
-        <p className="section-sub">
+        <p className="section-sub max-w-none">
           Diagnóstico, tratamiento y cuidado con la dedicación de un médico que ha dedicado su vida a la salud animal.
         </p>
 
