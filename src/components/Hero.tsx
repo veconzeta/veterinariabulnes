@@ -3,35 +3,31 @@ import { CLINICA, WA_URL } from "@/lib/constants";
 export default function Hero() {
   return (
     <section id="inicio" className="min-h-screen bg-white flex items-center pt-16">
-      <div className="max-w-6xl mx-auto px-4 py-16 md:py-20 grid md:grid-cols-2 gap-12 md:gap-16 items-center w-full">
+      <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-12 md:gap-16 items-center w-full">
 
         {/* Columna izquierda */}
         <div>
           <span className="section-label">Médico Veterinario · Santiago, Chile</span>
           <div className="section-divider" />
 
-          <h1 className="text-3xl md:text-[2.25rem] lg:text-[2.6rem] font-bold text-navy-900 leading-tight mb-3 whitespace-nowrap">
+          <h1 className="text-3xl md:text-[2.25rem] lg:text-[2.6rem] font-bold text-navy-900 leading-tight mb-5 whitespace-nowrap">
             {CLINICA.doctor}
           </h1>
-          <p className="text-lg text-gray-500 font-light mb-6 leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-500 font-light mb-8 leading-relaxed">
             50 años al servicio de la salud animal.
           </p>
-          <p className="text-gray-400 text-sm mb-10 leading-relaxed">
+          <p className="text-gray-400 text-base mb-12 leading-relaxed">
             Médico Veterinario titulado de la {CLINICA.universidad}<br />
             {CLINICA.direccion}, Santiago · {CLINICA.metro}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-wsp">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="btn-wsp text-base">
               <WhatsAppIcon /> Agendar por WhatsApp
             </a>
-            <a href={`tel:${CLINICA.telefono}`} className="btn-outline">
+            <a href={`tel:${CLINICA.telefono}`} className="btn-outline text-base">
               Llamar al consultorio
             </a>
-          </div>
-
-          <div className="mt-10 pt-8 border-t border-gray-100">
-            <p className="text-sm text-gray-400 leading-relaxed">{CLINICA.horario}</p>
           </div>
         </div>
 
