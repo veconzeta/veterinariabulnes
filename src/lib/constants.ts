@@ -11,7 +11,7 @@ export const CLINICA = {
   telefonoDisplay: "+56 9 9820 5598",
   email: "drpozo@gmail.com",
   web: "www.veterinariabulnes.cl",
-  horario: "Lunes a Viernes · 15:00 – 20:00 · Solo con agendamiento previo",
+  horario: "Lunes a Sábado · 15:00 – 20:00 · Solo con agendamiento previo",
   mapSrc:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.7!2d-70.6528!3d-33.4556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sGral.+Bulnes+28-A%2C+Santiago!5e0!3m2!1ses!2scl!4v1",
 } as const;
