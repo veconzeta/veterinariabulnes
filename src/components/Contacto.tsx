@@ -11,7 +11,7 @@ export default function Contacto() {
           El Dr. Pozo responde personalmente cada consulta.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 border border-gray-200">
           {/* WhatsApp */}
           <a
             href={WA_URL}

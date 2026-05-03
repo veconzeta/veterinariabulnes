@@ -10,7 +10,7 @@ export default function Hero() {
           <span className="section-label">Médico Veterinario · Santiago, Chile</span>
           <div className="section-divider" />
 
-          <h1 className="text-3xl md:text-[2.25rem] lg:text-[2.6rem] font-bold text-navy-900 leading-tight mb-5 whitespace-nowrap">
+          <h1 className="text-[1.75rem] md:text-[2.25rem] lg:text-[2.6rem] font-bold text-navy-900 leading-tight mb-5">
             {CLINICA.doctor}
           </h1>
           <p className="text-xl md:text-2xl text-gray-500 font-light mb-8 leading-relaxed">

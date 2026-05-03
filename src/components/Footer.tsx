@@ -13,7 +13,7 @@ export default function Footer() {
             <img
               src="/logo-white.svg"
               alt={CLINICA.nombre}
-              className="h-40 w-auto mb-6"
+              className="h-24 md:h-40 w-auto mb-6"
             />
             <div className="w-8 h-px bg-white/20 mb-4" />
             <p className="text-white text-sm font-semibold">{CLINICA.doctor}</p>
@@ -30,7 +30,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {NAV_LINKS.map((l) => (
                 <li key={l.href}>
-                  <a href={l.href} className="hover:text-white transition-colors">
+                  <a href={l.href} className="hover:text-white transition-colors py-1 block">
                     {l.label}
                   </a>
                 </li>
