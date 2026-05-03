@@ -13,7 +13,7 @@ export default function Footer() {
             <img
               src="/logo-white.svg"
               alt={CLINICA.nombre}
-              className="h-24 md:h-40 w-auto mb-6"
+              className="h-32 md:h-52 w-auto mb-6"
             />
             <div className="w-8 h-px bg-white/20 mb-4" />
             <p className="text-white text-sm font-semibold">{CLINICA.doctor}</p>
