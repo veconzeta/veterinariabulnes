@@ -92,6 +92,83 @@
 
 ---
 
+## Sesión 3 — 2026-05-02
+
+### Rediseño visual — Estilo The Paw Advisor con colores Veterinaria Bulnes
+- Hero con fondo blanco + logo en círculo punteado navy + stats navy
+- Servicios con círculos navy para íconos, centrado
+- SobreElDr con patrón huellas y stats navy con texto blanco
+- Tailwind extendido con navy-100 a navy-400
+*(hecho por Claude)*
+
+### Rediseño completo — Estética médica de autoridad
+El diseño "amigable" no representaba la trayectoria del Dr. Pozo. Se rehízo todo con dirección de clínica médica de prestigio.
+
+**Cambios por componente:**
+- **globals.css:** Sin patrones decorativos. Botones con esquinas rectas (`rounded-sm`). Nueva clase `section-label` (tiny caps navy), `section-divider` (línea navy 12px), tipografía más formal.
+- **Header:** Barra superior con dirección y teléfono. Nav en uppercase tracking-widest. CTA rectangular sin redondeo. "Veterinaria" light / "Bulnes" bold.
+- **Hero:** Fondo blanco limpio. Headline directo: "50 años al servicio de la salud animal." Tarjeta de credenciales navy a la derecha con datos reales (no decoración).
+- **Servicios:** Grid con borde compartido (gap-px bg-gray-200). Sin círculos. Íconos SVG línea fina. Cards con separadores internos de borde.
+- **SobreElDr:** Statement tipográfico izquierda. Lista de credenciales con líneas separadoras derecha. Stat "50+" en bloque navy.
+- **Contacto:** Grid con separador gris (gap-px). Íconos SVG inline. Hover navy completo con texto blanco.
+*(hecho por Claude)*
+
+---
+
+## Sesión 3 — 2026-05-02
+
+### Lo que se hizo
+
+**Rediseño visual estilo "The Paw Advisor" (Opción B — colores Veterinaria Bulnes)**
+
+- **`src/app/globals.css`:** Agregado patrón de huellas de pata (SVG inline como background-image CSS) con opacidad 4% en clase `.paw-pattern`. Agregada clase `.btn-outline` para botón secundario con borde navy.
+- **`src/components/Hero.tsx`:** Fondo oscuro navy → fondo blanco con patrón de huellas. Texto cambia a navy. Logo color (logo.svg) en círculo blanco con borde punteado navy y sombra. Botón secundario cambia a outline.
+- **`src/components/Servicios.tsx`:** Cards centradas. Ícono emoji dentro de círculo navy sólido (w-20 h-20). Texto centrado. Hover con sombra más pronunciada.
+- **`src/components/SobreElDr.tsx`:** Sección con patrón de huellas. Círculo decorativo con borde punteado navy. Stats cards cambian a fondo navy-800 con texto blanco (estilo del reference).
+- **`tailwind.config.ts`:** Agregados tonos navy-100 a navy-400 para tener el espectro completo disponible.
+
+*(hecho por Claude)*
+
+---
+
+## Sesión 4 — 2026-05-03
+
+### Lo que se hizo
+
+**1. Horario actualizado**
+- `src/lib/constants.ts`: horario actualizado a "Lunes a Sábado · 15:00 – 20:00 · Solo con agendamiento previo"
+
+**2. Refinamiento de diseño — iteraciones visuales**
+- **Header:** Integración de `logo-horizontal-white.svg` (versión blanca creada por el cliente). viewBox corregido de 0 0 1080 1080 a "85 430 900 220" para recortar el canvas vacío. Logo aumentado a `h-12`. Barra superior eliminada. Botón Agendar eliminado. "Inicio" agregado al nav. Indicador activo por scroll con `IntersectionObserver` (cápsula `bg-white/20` en sección visible).
+- **Hero:** Dr. Guillermo Pozo Ruiz como protagonista (h1 principal). "50 años al servicio..." como subtítulo. Línea de horario inferior eliminada. Textos agrandados. `whitespace-nowrap` removido del nombre para evitar overflow móvil. Tarjeta de credenciales con horario en dos líneas limpias.
+- **Servicios:** Íconos reemplazados 3 veces hasta llegar a: portapapeles (consulta), gecko/lagartija (exóticos), vendaje diagonal (cirugía). `max-w-none` en subtítulo para una sola línea.
+- **SobreElDr:** Grid `md:grid-cols-[1fr_320px]` para columna credenciales más angosta. Título ajustado a 2 líneas con `<br />` en punto óptimo.
+- **Agendamiento:** Cada oración en su propio `<p>` para que el punto siempre termine la línea. `text-balance` aplicado. Teléfono con `whitespace-nowrap`.
+- **Contacto:** `grid-cols-1` agregado para mobile. Correo: `mailto:` (universal). Ícono WhatsApp corregido (era PhoneIcon, ahora es el SVG de WhatsApp real).
+- **Footer:** `logo-white.svg` con viewBox corregido ("180 140 720 900"). Logo `h-32 md:h-52`. Links con `py-1 block` para mejor touch target.
+
+**3. Favicon**
+- `public/icon.png` creado por el cliente (fondo navy + isotipo blanco). Copiado a `src/app/icon.png` y `src/app/apple-icon.png` para que Next.js lo use como favicon de navegador y Apple.
+
+**4. Optimización móvil**
+- `layout.tsx`: exportación `viewport` explícita (`width: device-width, initialScale: 1, maximumScale: 1`)
+- Header hamburguesa: `min-w/h-[44px]` para cumplir mínimo de touch target Apple/Google
+- Todos los grids revisados para colapsar correctamente en móvil
+
+*(hecho por Claude)*
+
+---
+
+## Estado al cierre de sesión 4 (2026-05-03)
+
+- Sitio en línea: **veterinariabulnes.pages.dev** ✓
+- Favicon: navy + isotipo blanco ✓
+- Horario: Lunes a Sábado 15:00–20:00 ✓
+- Dominio `.cl`: pendiente de conectar
+- Repo: público en GitHub (pendiente hacer privado)
+
+---
+
 ## Notas técnicas importantes
 
 ### Para hacer commits/push en este proyecto
