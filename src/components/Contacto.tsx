@@ -50,9 +50,7 @@ export default function Contacto() {
 
           {/* Email */}
           <a
-            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${CLINICA.email}`}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`mailto:${CLINICA.email}`}
             className="group bg-white hover:bg-navy-800 p-8 flex flex-col gap-4 transition-colors duration-200"
           >
             <div className="text-navy-800 group-hover:text-white transition-colors">
