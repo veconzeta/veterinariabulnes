@@ -159,11 +159,22 @@ El diseño "amigable" no representaba la trayectoria del Dr. Pozo. Se rehízo to
 
 ---
 
+## Sesión 4 continuación — 2026-05-03
+
+**Mapa Google Maps**
+- Primer intento: cambio a `maps.google.com/maps?q=...&output=embed` — seguía mostrando ruta
+- Solución final: URL formato `maps/embed?pb=` con coordenadas directas de la clínica → muestra solo el pin sin rutas ni popups de directions
+
+*(hecho por Claude)*
+
+---
+
 ## Estado al cierre de sesión 4 (2026-05-03)
 
 - Sitio en línea: **veterinariabulnes.pages.dev** ✓
 - Favicon: navy + isotipo blanco ✓
 - Horario: Lunes a Sábado 15:00–20:00 ✓
+- Mapa: pin directo sin rutas ✓
 - Dominio `.cl`: pendiente de conectar
 - Repo: público en GitHub (pendiente hacer privado)
 
