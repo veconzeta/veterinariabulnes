@@ -39,7 +39,7 @@ export default function Ubicacion() {
           <div className="rounded-2xl overflow-hidden shadow-md border border-gray-200 h-80 bg-gray-200 flex items-center justify-center">
             <iframe
               title="Ubicación Veterinaria Bulnes"
-              src={`https://www.google.com/maps?q=${encodeURIComponent(CLINICA.direccion + ", " + CLINICA.ciudad)}&output=embed`}
+              src="https://maps.google.com/maps?q=Gral.+Bulnes+28-A,+Santiago,+Chile&z=17&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
