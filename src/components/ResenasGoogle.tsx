@@ -35,7 +35,7 @@ function GoogleIcon() {
 
 function TarjetaResena({ review }: { review: Review }) {
   return (
-    <div className="border border-gray-100 p-6 flex flex-col gap-3">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col gap-3">
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-white font-bold text-sm shrink-0">
           {review.nombre.charAt(0).toUpperCase()}
