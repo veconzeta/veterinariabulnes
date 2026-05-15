@@ -82,8 +82,7 @@ export default function SobreElDr() {
 
         {/* Columna izquierda — carrusel unificado */}
         <div className="flex flex-col">
-          <span className="section-label">Sobre el profesional</span>
-          <div className="section-divider" />
+          <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-8">Historia</h2>
 
           {/* Slide — ocupa el espacio disponible */}
           <div className="flex-1">
@@ -95,9 +94,9 @@ export default function SobreElDr() {
             ) : (
               <div className="h-8 mb-4" />
             )}
-            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 leading-snug mb-5">
+            <h3 className="text-2xl md:text-3xl font-bold text-navy-900 leading-snug mb-5">
               {slide.titulo}
-            </h2>
+            </h3>
             <p className="text-base text-gray-500 leading-relaxed">
               {slide.texto}
             </p>
