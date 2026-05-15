@@ -89,7 +89,7 @@ export default function SobreElDr() {
           <div className="flex-1">
             {/* Año decorativo — grande y ligero, da peso visual */}
             {slide.año ? (
-              <p className="text-7xl md:text-8xl font-bold text-navy-100 leading-none mb-4 select-none">
+              <p className="text-7xl md:text-8xl font-bold text-navy-300 leading-none mb-4 select-none">
                 {slide.año}
               </p>
             ) : (
