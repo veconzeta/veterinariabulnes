@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { CLINICA } from "@/lib/constants";
 
 export default function Ubicacion() {
@@ -49,7 +50,18 @@ export default function Ubicacion() {
             />
           </div>
         </div>
+
+        {/* Reseñas Google */}
+        <div className="mt-16 border-t border-gray-100 pt-12">
+          <p className="section-label mb-8">Lo que dicen nuestros pacientes</p>
+          <div
+            className="elfsight-app-ebdb4986-baa5-443c-9a65-313af0c16d07"
+            data-elfsight-app-lazy
+          />
+        </div>
       </div>
+
+      <Script src="https://elfsightcdn.com/platform.js" strategy="lazyOnload" />
     </section>
   );
 }

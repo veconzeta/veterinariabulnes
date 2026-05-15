@@ -169,6 +169,20 @@ El diseño "amigable" no representaba la trayectoria del Dr. Pozo. Se rehízo to
 
 ---
 
+## Sesión 5 — 2026-05-15
+
+### Widget de reseñas Google (Elfsight)
+
+- Integrado widget Elfsight Google Reviews en `src/components/Ubicacion.tsx`, debajo del mapa
+- Layout: Carousel — muestra reseñas rotando (4.6 ⭐, 39 opiniones reales)
+- ID widget: `elfsight-app-ebdb4986-baa5-443c-9a65-313af0c16d07`
+- Script cargado con `next/script` estrategia `lazyOnload` (no bloquea el render)
+- Sección con encabezado "Lo que dicen nuestros pacientes"
+
+*(hecho por Claude)*
+
+---
+
 ## Estado al cierre de sesión 4 (2026-05-03)
 
 - Sitio en línea: **veterinariabulnes.pages.dev** ✓
