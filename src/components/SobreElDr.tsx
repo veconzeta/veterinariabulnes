@@ -77,7 +77,7 @@ export default function SobreElDr() {
             Más de medio siglo dedicado<br />a la salud de tu mascota.
           </h2>
           <p className="text-gray-500 leading-relaxed mb-6">
-            {CLINICA.doctor} es Médico Veterinario titulado de la{" "}
+            {CLINICA.doctor} es Médico Veterinario titulado con distinción máxima de la{" "}
             <strong className="text-navy-800">{CLINICA.universidad}</strong>, con más
             de {CLINICA.experiencia} de ejercicio profesional ininterrumpido en Santiago.
           </p>
