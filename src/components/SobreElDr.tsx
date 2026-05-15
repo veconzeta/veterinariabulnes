@@ -1,6 +1,9 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CLINICA } from "@/lib/constants";
+
+const AUTOPLAY_MS = 120_000; // 2 minutos entre slides
+const RESUME_MS   = 120_000; // reanudar tras 2 minutos de inactividad
 
 const credenciales = [
   { label: "Casa de estudios", valor: "Universidad de Chile" },
@@ -37,20 +40,30 @@ const slides = [
 ];
 
 export default function SobreElDr() {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent]   = useState(0);
+  const [paused, setPaused]     = useState(false);
+  const inactivityRef           = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const next = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  }, []);
-
-  const prev = () => {
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  // Al navegar manualmente: pausa y arranca contador de inactividad
+  const handleManualNav = (fn: () => void) => {
+    fn();
+    setPaused(true);
+    if (inactivityRef.current) clearTimeout(inactivityRef.current);
+    inactivityRef.current = setTimeout(() => setPaused(false), RESUME_MS);
   };
 
+  const next = () => setCurrent((p) => (p + 1) % slides.length);
+  const prev = () => setCurrent((p) => (p - 1 + slides.length) % slides.length);
+
+  // Auto-avance cuando no está en pausa
   useEffect(() => {
-    const timer = setInterval(next, 20000);
+    if (paused) return;
+    const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), AUTOPLAY_MS);
     return () => clearInterval(timer);
-  }, [next]);
+  }, [paused]);
+
+  // Limpieza del timer de inactividad al desmontar
+  useEffect(() => () => { if (inactivityRef.current) clearTimeout(inactivityRef.current); }, []);
 
   return (
     <section id="doctor" className="bg-white py-24">
@@ -94,14 +107,14 @@ export default function SobreElDr() {
             {/* Controles */}
             <div className="flex items-center gap-4 mt-6">
               <button
-                onClick={prev}
+                onClick={() => handleManualNav(prev)}
                 className="w-9 h-9 border border-gray-200 hover:border-navy-800 hover:bg-navy-800 hover:text-white text-navy-800 flex items-center justify-center transition-colors"
                 aria-label="Anterior"
               >
                 ‹
               </button>
               <button
-                onClick={next}
+                onClick={() => handleManualNav(next)}
                 className="w-9 h-9 border border-gray-200 hover:border-navy-800 hover:bg-navy-800 hover:text-white text-navy-800 flex items-center justify-center transition-colors"
                 aria-label="Siguiente"
               >
@@ -113,7 +126,7 @@ export default function SobreElDr() {
                 {slides.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setCurrent(i)}
+                    onClick={() => handleManualNav(() => setCurrent(i))}
                     className={`h-1.5 transition-all duration-300 ${
                       i === current ? "w-6 bg-navy-800" : "w-1.5 bg-gray-300 hover:bg-gray-400"
                     }`}
@@ -122,7 +135,8 @@ export default function SobreElDr() {
                 ))}
               </div>
 
-              <span className="ml-auto text-xs text-gray-300">
+              <span className="ml-auto flex items-center gap-2 text-xs text-gray-300">
+                {paused && <span title="Reanuda en 2 min">⏸</span>}
                 {current + 1} / {slides.length}
               </span>
             </div>
