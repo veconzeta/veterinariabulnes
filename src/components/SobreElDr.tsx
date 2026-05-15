@@ -79,15 +79,15 @@ export default function SobreElDr() {
 
   return (
     <section id="doctor" className="bg-white py-24">
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[1fr_320px] gap-20 items-start">
+      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-[1fr_320px] gap-20 items-stretch">
 
         {/* Columna izquierda — carrusel unificado */}
-        <div>
+        <div className="flex flex-col">
           <span className="section-label">Sobre el profesional</span>
           <div className="section-divider" />
 
-          {/* Slide */}
-          <div className="min-h-[200px]">
+          {/* Slide — ocupa el espacio disponible */}
+          <div className="flex-1">
             {slide.año && (
               <p className="text-xs font-bold text-navy-500 tracking-widest mb-3">
                 {slide.año}
@@ -105,7 +105,7 @@ export default function SobreElDr() {
             </p>
           </div>
 
-          {/* Controles */}
+          {/* Controles — anclados al fondo */}
           <div className="flex items-center gap-4 mt-8">
             <button
               onClick={() => handleManualNav(prev)}
