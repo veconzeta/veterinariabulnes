@@ -35,7 +35,7 @@ const slides = [
     año: "Hoy",
     titulo: "Defensa del bienestar animal",
     texto:
-      "La trayectoria del Dr. Pozo ha estado siempre ligada a la defensa de los animales. Su ejercicio profesional se desarrolló en paralelo al fortalecimiento de la legislación protectora en Chile — como la Ley Nº 18.859, art. 291 bis, que sanciona con presidio menor los actos de crueldad o maltrato contra los animales.",
+      "La trayectoria del Dr. Pozo estuvo ligada al fortalecimiento de la legislación protectora en Chile. Su participación en ese proceso contribuyó al desarrollo de marcos legales como la Ley Nº 18.859, art. 291 bis — que sanciona con presidio menor los actos de crueldad o maltrato contra los animales. Un hito histórico cuyos efectos protegen a los animales hasta hoy.",
   },
 ];
 
