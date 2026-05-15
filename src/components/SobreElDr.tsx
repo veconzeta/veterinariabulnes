@@ -75,7 +75,6 @@ export default function SobreElDr() {
   useEffect(() => () => { if (inactivityRef.current) clearTimeout(inactivityRef.current); }, []);
 
   const slide = slides[current];
-  const isIntro = current === 0;
 
   return (
     <section id="doctor" className="bg-white py-24">
@@ -88,19 +87,18 @@ export default function SobreElDr() {
 
           {/* Slide — ocupa el espacio disponible */}
           <div className="flex-1">
-            {slide.año && (
-              <p className="text-xs font-bold text-navy-500 tracking-widest mb-3">
+            {/* Año decorativo — grande y ligero, da peso visual */}
+            {slide.año ? (
+              <p className="text-7xl md:text-8xl font-bold text-navy-100 leading-none mb-4 select-none">
                 {slide.año}
               </p>
+            ) : (
+              <div className="h-8 mb-4" />
             )}
-            <h2
-              className={`font-bold text-navy-900 leading-snug mb-5 ${
-                isIntro ? "text-3xl md:text-4xl" : "text-xl md:text-2xl"
-              }`}
-            >
+            <h2 className="text-2xl md:text-3xl font-bold text-navy-900 leading-snug mb-5">
               {slide.titulo}
             </h2>
-            <p className="text-gray-500 leading-relaxed">
+            <p className="text-base text-gray-500 leading-relaxed">
               {slide.texto}
             </p>
           </div>
