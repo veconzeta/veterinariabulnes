@@ -40,7 +40,7 @@ export default function Hero() {
             </div>
             <div className="border-b border-white/20 pb-6 mb-6">
               <p className="text-sm font-semibold tracking-wide">{CLINICA.universidad}</p>
-              <p className="text-white/50 text-xs mt-1">Médico Veterinario Titulado</p>
+              <p className="text-white/50 text-xs mt-1">Titulado con distinción máxima</p>
             </div>
             <div className="border-b border-white/20 pb-6 mb-6">
               <p className="text-sm font-semibold tracking-wide">{CLINICA.direccion}</p>
