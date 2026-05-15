@@ -10,7 +10,7 @@ export default function Ubicacion() {
         </p>
         <h2 className="section-title">Cómo llegar</h2>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-stretch">
           {/* Info */}
           <div className="space-y-6">
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
@@ -37,7 +37,7 @@ export default function Ubicacion() {
           </div>
 
           {/* Mapa */}
-          <div className="rounded-2xl overflow-hidden shadow-md border border-gray-200 h-80 bg-gray-200 flex items-center justify-center">
+          <div className="rounded-2xl overflow-hidden shadow-md border border-gray-200 bg-gray-200 min-h-80">
             <iframe
               title="Ubicación Veterinaria Bulnes"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.572!2d-70.6553!3d-33.4572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5a36bc15aa3%3A0x2e28af8da8df93fa!2sGral.%20Bulnes%2028-A%2C%20Santiago!5e0!3m2!1ses!2scl!4v1715000000000!5m2!1ses!2scl"
