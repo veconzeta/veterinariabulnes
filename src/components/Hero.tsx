@@ -17,7 +17,7 @@ export default function Hero() {
             50 años al servicio de la salud animal.
           </p>
           <p className="text-gray-400 text-base mb-12 leading-relaxed">
-            Médico Veterinario titulado de la {CLINICA.universidad}<br />
+            Médico Veterinario titulado con distinción máxima de la {CLINICA.universidad}<br />
             {CLINICA.direccion}, Santiago · {CLINICA.metro}
           </p>
 
